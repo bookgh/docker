@@ -1,7 +1,7 @@
 FROM centos:7.5.1804
 
 # 安装mysql
-RUN yum install -y http://192.168.2.3:3030/shared/mysql-5.1.73-1.el7.centos.x86_64.rpm \
+RUN yum install -y http://file.freefrp.cn/shared/mysql-5.1.73-1.el7.centos.x86_64.rpm \
  && yum clean all
 
 ENV PATH=/usr/local/mysql/bin:$PATH
