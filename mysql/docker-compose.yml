@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+
+  mysql:
+    image: mysql:5.1
+    container_name: mysql
+    hostname: mysql
+    ports:
+      - 3306:3306
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /data/mysql:/var/lib/mysql
+      - ./all.sql:/docker-entrypoint-initdb.d/all.sql 
+    networks:
+      - mysql
+    restart: always
+    environment:
+      MYSQL_USER: owncloud
+      MYSQL_PASSWORD: owncloud
+      MYSQL_DATABASE: owncloud
+      MYSQL_ROOT_PASSWORD: zaq1@WSX
+
+networks:
+  mysql:
